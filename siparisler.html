@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowerly - Siparişlerim</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    Kurumsal Hediye | Yardım
+</div>
+
+<div class="search-section">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <a href="flowerly.html" style="text-decoration:none; color:inherit;">
+                🌸 Flowerly
+            </a>
+        </div>
+
+        <div class="flex-grow-1 px-4">
+            <input class="form-control" placeholder="Marka, ürün veya kategori ara">
+        </div>
+
+        <div class="d-flex align-items-center gap-4" id="navMenu">
+            <a href="urunler.html" style="text-decoration:none; color:inherit;">Ürünler</a>
+            
+            <label id="uyelikLabel" for="modalAc" style="cursor:pointer;">
+                <strong style="color:inherit;">👤 Üyelik</strong>
+            </label>
+
+            <div class="menu-item">
+                Kategoriler ▾
+                <div class="dropdown-menu-custom">
+                    <a href="cok-satanlar.html">Çok Satanlar</a>
+                    <a href="iyi-ki-dogdun.html">İyi ki Doğdun</a>
+                    <a href="yeni-bebek.html">Yeni Bebek</a>
+                </div>
+            </div>
+
+            <a href="sepetim.html" style="text-decoration:none; color:inherit; font-weight:600; position:relative;">
+                🛒 Sepetim
+                <span id="sepetBadge" class="sepet-badge">0</span>
+            </a>
+        </div>
+    </div>
+</div>
+   <div class="container mt-5">
+    <h3>📦 Siparişlerim</h3>
+    <hr>
+    <!-- Siparişlerin ekleneceği boş liste alanı  -->
+    <div id="siparisListesi" class="row g-3">
+        <!-- JavaScript burayı dolduracak -->
+    </div>
+</div>
+   
+    <footer style="background:#f30387; color:white; padding:30px; text-align:center; margin-top:50px;">
+    <h4>🌸 Flowerly</h4>
+    <p>Türkiye'nin en taze çiçekleri, kapınızda!</p>
+    <p style="margin-top:10px; font-size:13px; opacity:0.9;">
+        © 2025 Flowerly - Tüm hakları saklıdır<br>
+        Öğrenci Projesi Prototipi
+    </p>
+
+    <div id="adminSection" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; display: none;">
+        <a href="admin.html" style="color: yellow; text-decoration: underline; font-weight: bold; font-size: 16px;">
+           ⚙️ YÖNETİCİ PANELİNE GİRİŞ YAP
+        </a>
+    </div>
+</footer>
+
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+// Sayfa yüklendiğinde çalışması için (Slayt 22 ve 27 mantığı)
+window.onload = function() {
+$(document).ready(function() {
+    // Slayt 27: Diziler (Örnek sipariş verileri)
+    var siparisler = ["Pembe Zambak Buketi", "Lila Düşler Buketi", "Aşkın Zarafeti Buketi"];
+    var tarihler = ["20.12.2025", "15.12.2025", "10.12.2025"];
+    var fiyatlar = ["750 TL", "350 TL", "500 TL"];
+
+    // Slayt 5: Listeyi ekleyeceğimiz kapsayıcıyı seçiyoruz
+    var listeAlani = document.getElementById("siparisListesi");
+
+    // Slayt 34: For Döngüsü (Dizi elemanlarını tek tek dönüyoruz)
+    for (var i = 0; i < siparisler.length; i++) {
+        // Slayt 12: innerHTML ile içeriği dinamik olarak oluşturma
+        // Her döngüde listenin üzerine yeni bir sipariş kartı ekliyoruz
+        listeAlani.innerHTML += `
+            <div class="col-12">
+                <div class="card p-3 shadow-sm" style="border-left: 5px solid #f30387;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1 fw-bold">${siparisler[i]}</h6>
+                            <small class="text-muted">Tarih: ${tarihler[i]}</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="badge bg-success mb-1">Teslim Edildi</span>
+                            <div class="fw-bold text-primary">${fiyatlar[i]}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    // Slayt 4: Document üzerinden navigasyon (nav) alanını seçiyoruz
+    // Sayfanızda ID olmadığı için sınıf seçicisi (class) kullanıyoruz
+    var navAlani = document.querySelector(".d-flex.align-items-center.gap-4");
+
+    // Slayt 12: innerHTML kullanarak mevcut menünün sonuna yeni linkleri ekliyoruz
+    if (navAlani) {
+        navAlani.innerHTML += '<a href="favoriler.html" style="text-decoration:none; color:inherit;font">❤️ Favoriler</a>';
+        navAlani.innerHTML += '<a href="siparisler.html" style="text-decoration:none; color:inherit;">📦 Siparişlerim</a>';
+    }
+
+    // 1. Sepete Ekle Butonları İçin İşlem
+    // Slayt 6: Belirtilen class (buy-btn) ile tüm elementleri seçer
+    var sepetButonlari = document.getElementsByClassName("buy-btn");
+
+    // Slayt 34: For döngüsü ile her butona tek tek olay ekliyoruz
+    for (var i = 0; i < sepetButonlari.length; i++) {
+        // Slayt 27: addEventListener ile "click" olayı ekleme
+        sepetButonlari[i].addEventListener("click", function() {
+            // Slayt 39: Alert Box
+            alert("Ürün başarıyla sepete eklendi!");
+        });
+    }
+
+    // 2. Favorilere Ekle Butonları İçin İşlem
+    var favoriButonlari = document.getElementsByClassName("fav-btn");
+
+    for (var j = 0; j < favoriButonlari.length; j++) {
+        favoriButonlari[j].addEventListener("click", function() {
+            alert("Ürün favorilerinize eklendi!");
+        });
+    }
+    });
+};
+</script>
+</body>
+</html>

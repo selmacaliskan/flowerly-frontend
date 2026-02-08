@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowerly - Prototip</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    Kurumsal Hediye | Yardım
+</div>
+
+<div class="search-section">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <a href="flowerly.html" style="text-decoration:none; color:inherit;">
+                🌸 Flowerly
+            </a>
+        </div>
+
+        <div class="flex-grow-1 px-4">
+            <input class="form-control" placeholder="Marka, ürün veya kategori ara">
+        </div>
+
+        <div class="d-flex align-items-center gap-4" id="navMenu">
+            <a href="urunler.html" style="text-decoration:none; color:inherit;">Ürünler</a>
+            
+            <label id="uyelikLabel" for="modalAc" style="cursor:pointer;">
+                <strong style="color:inherit;">👤 Üyelik</strong>
+            </label>
+
+            <div class="menu-item">
+                Kategoriler ▾
+                <div class="dropdown-menu-custom">
+                    <a href="cok-satanlar.html">Çok Satanlar</a>
+                    <a href="iyi-ki-dogdun.html">İyi ki Doğdun</a>
+                    <a href="yeni-bebek.html">Yeni Bebek</a>
+                </div>
+            </div>
+
+            <a href="sepetim.html" style="text-decoration:none; color:inherit; font-weight:600; position:relative;">
+                🛒 Sepetim
+                <span id="sepetBadge" class="sepet-badge">0</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="promo-banner">
+    <a href="urunler.html">
+        <img src="https://i.pinimg.com/originals/f2/f3/1b/f2f31baa64307c47661157068d278fd3.gif" alt="animasyonlu-cicek-gorseli.gif">
+    </a>
+</div>
+
+<!-- Vitrin Başlığı -->
+<div class="container mt-4">
+    <h4 class="fw-bold">Vitrin</h4>
+</div>
+
+<!-- Yatay Kaydırmalı Vitrin (container dışarıda!) -->
+<div class="mt-3">
+    <div class="fanus-row">
+
+        <div class="fanus">
+            <div class="dome"><img src="cicek1.png"></div>
+            <div class="p">
+                <p class="flower-names">Pembe Zambak Buketi</p>
+                <p class="fiyat">750TL</p>
+                <p class="aciklama">Güzelliğiyle büyüleyen pembe zambaklar, bu özel bukette bir araya gelerek duygularınızı en zarif şekilde ifade etmenizi sağlar.</p>
+            </div>
+               <button class="buy-btn">Sepete Ekle</button>
+               <button class="fav-btn">❤️ Favorilere Ekle</button>
+        </div>
+
+        <div class="fanus">
+            <div class="dome"><img src="cicek6.png"></div>
+            <div class="p">
+                <p class="flower-names">Romantik Şakayık Buketi</p>
+                <p class="fiyat">600TL</p>
+                <p class="aciklama">Aşkın ve zarafetin simgesi olan şakayıklar, bu bukette romantizmi doruklara çıkarır ve özel anlarınızı unutulmaz kılar.</p>
+            </div>
+           <button class="buy-btn">Sepete Ekle</button>
+               <button class="fav-btn">❤️ Favorilere Ekle</button>
+        </div>
+
+        <div class="fanus">
+            <div class="dome"><img src="cicek3.png"></div>
+            <div class="p">
+                <p class="flower-names">Lila Düşler Buketi</p>
+                <p class="fiyat">350TL</p>
+                <p class="aciklama">Yeniden doğuşun ve zarafetin simgesi olan laleler, bu bukette sade güzelliğiyle kalplere dokunur ve baharın tazeliğini taşır.</p>
+            </div>
+           <button class="buy-btn">Sepete Ekle</button>
+               <button class="fav-btn">❤️ Favorilere Ekle</button>
+        </div>
+
+        <div class="fanus">
+            <div class="dome"><img src="cicek4.png"></div>
+            <div class="p">
+                <p class="flower-names">Beyaz Zarafet Buketi</p>
+                <p class="fiyat">450TL</p>
+                <p class="aciklama">Huzur ve içtenliği yansıtan krizantemler, sade ama anlamlı bir seçimdir.</p>
+            </div>
+            <button class="buy-btn">Sepete Ekle</button>
+               <button class="fav-btn">❤️ Favorilere Ekle</button>
+        </div>
+
+        <div class="fanus">
+            <div class="dome"><img src="cicek5.png"></div>
+            <div class="p">
+                <p class="flower-names">Aşkın Zarafeti Buketi</p>
+                <p class="fiyat">500TL</p>
+                <p class="aciklama">Aşkın en klasik hali olan güller, bu bukette şefkatle buluşur ve duygularınızı en etkileyici şekilde ifade eder.</p>
+            </div>
+            <button class="buy-btn">Sepete Ekle</button>
+               <button class="fav-btn">❤️ Favorilere Ekle</button>
+        </div>
+
+        <div class="fanus">
+            <div class="dome"><img src="cicek2.png"></div>
+            <div class="p">
+                <p class="flower-names">İlkbahar Rüyası Buketi</p>
+                <p class="fiyat">800TL</p>
+                <p class="aciklama">Zarif sevginin en naif hali olan lisyantuslar, bu bukette yumuşak renkleriyle şefkati ve inceliği yansıtır.</p>
+            </div>
+           <button class="buy-btn">Sepete Ekle</button>
+               <button class="fav-btn">❤️ Favorilere Ekle</button>
+        </div>
+
+    </div>
+    <nav>
+
+        <ul class="pagination">
+              <li class="page-item">
+              <a class="page-link" href="sayfa.html" tabindex="-1">geri</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="sayfa.html">1</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="fw-bold mb-3">Biz Kimiz?</h3>
+                <p>Flowerly, çiçeklerin zarafetini modern tasarımla buluşturan özel bir marka. Her buketimiz, yalnızca bir çiçek düzenlemesi değil; duygularınızı en estetik ve anlamlı şekilde ifade eden bir sanat eseri.</p>
+                <p>Flowerly, hayatın en özel anlarını güzelleştirmek için burada. Biz, çiçeklerin büyüsünü teknolojiyle buluşturarak, her hediyeyi unutulmaz bir hatıraya dönüştürmeyi hedefliyoruz.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="background:#f30387; color:white; padding:30px; text-align:center; margin-top:50px;">
+    <h4>🌸 Flowerly</h4>
+    <p>Türkiye'nin en taze çiçekleri, kapınızda!</p>
+    <p style="margin-top:10px; font-size:13px; opacity:0.9;">
+        © 2025 Flowerly - Tüm hakları saklıdır<br>
+        Öğrenci Projesi Prototipi
+    </p>
+
+    <div id="adminSection" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; display: none;">
+        <a href="admin.html" style="color: yellow; text-decoration: underline; font-weight: bold; font-size: 16px;">
+           ⚙️ YÖNETİCİ PANELİNE GİRİŞ YAP
+        </a>
+    </div>
+</footer>
+
+<!-- Üyelik Modal -->
+<input type="checkbox" id="modalAc" class="gizli">
+<div class="modal-overlay">
+    <label for="modalAc" class="modal-close">×</label>
+    <div class="modal-content">
+        <input type="radio" name="t" id="tab1" checked class="gizli">
+        <input type="radio" name="t" id="tab2" class="gizli">
+
+        <div class="modal-tabs">
+            <label for="tab1" class="modal-tab">Giriş Yap</label>
+            <label for="tab2" class="modal-tab">Üye Ol</label>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane">
+                <h3>Hoş Geldiniz! 👋</h3>
+                <input type="text" id="loginUser" placeholder="Kullanıcı Adı" required>
+                <input type="password" id="loginPass" placeholder="Şifre" required>
+                <button class="btn-login">Giriş Yap</button>
+            </div>
+            <div class="tab-pane">+
+                <h3>Yeni Üyelik 🌟</h3>
+                <button clas=""></button>
+                <input type="text" id="regName" placeholder="Ad Soyad" required>
+                <input type="email" id="regEmail" placeholder="E-posta" required>
+                <input type="tel" placeholder="Telefon (05XX XXX XX XX)" required>
+                <input type="password" id="regPass1" placeholder="Şifre" required>
+                <input type="password" id="regPass2" placeholder="Şifre Tekrar" required>
+                <div class="checkbox">
+                    <input type="checkbox" id="kvkk" required>
+                    <label for="kvkk">KVKK ve kullanım sözleşmesini kabul ediyorum</label>
+                </div>
+                <button class="btn-login">Hesap Oluştur</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Sayfa yüklendiğinde çalışması için 
+window.onload = function() {
+$(document).ready(function() {
+    var girisYapildi = false; 
+
+    // Navigasyon alanını seçme
+    var navAlani = document.getElementById("navMenu");
+
+    // innerHTML ile linkleri ekliyoruz (ID vererek kontrol edeceğiz)
+    if (navAlani) {
+        navAlani.innerHTML += '<a href="#" id="favLink" style="text-decoration:none; color:inherit;">❤️ Favoriler</a>';
+        navAlani.innerHTML += '<a href="#" id="sipLink" style="text-decoration:none; color:inherit;">📦 Siparişlerim</a>';
+    }
+     // --- FAVORİLER TIKLAMA KONTROLÜ ---
+    // Olay dinleyicisi ekleme
+    document.getElementById("favLink").addEventListener("click", function() {
+        // If Kontrolü
+        if (girisYapildi == false) {
+            // Alert Box
+            alert("Uyarı: Favorilerinizi görmek için lütfen önce giriş yapın!");
+        } else {
+            // Giriş yapılmışsa sayfaya yönlendir
+            window.location.href = "favoriler.html";
+        }
+    });
+
+    // --- SİPARİŞLERİM TIKLAMA KONTROLÜ ---
+    document.getElementById("sipLink").addEventListener("click", function() {
+        if (girisYapildi == false) {
+            alert("Uyarı: Siparişlerinizi görmek için lütfen önce giriş yapın!");
+        } else {
+            window.location.href = "siparisler.html";
+        }
+    });
+   
+    // 1. Sepete Ekle Butonları İçin İşlem
+    // Slayt 6: Belirtilen class (buy-btn) ile tüm elementleri seçer
+    var sepetButonlari = document.getElementsByClassName("buy-btn");
+
+    //  For döngüsü ile her butona tek tek olay ekliyoruz
+    for (var i = 0; i < sepetButonlari.length; i++) {
+        // addEventListener ile "click" olayı ekleme
+        sepetButonlari[i].addEventListener("click", function() {
+            // Alert Box
+            alert("Ürün başarıyla sepete eklendi!");
+        });
+    }
+
+    // 2. Favorilere Ekle Butonları İçin İşlem
+    var favoriButonlari = document.getElementsByClassName("fav-btn");
+
+    for (var j = 0; j < favoriButonlari.length; j++) {
+        favoriButonlari[j].addEventListener("click", function() {
+            alert("Ürün favorilerinize eklendi!");
+        });
+    }
+    });
+};
+</script>
+</body>
+</html>

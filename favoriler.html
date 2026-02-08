@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowerly - Favorilerim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-bar">
+    Kurumsal Hediye | Yardım
+</div>
+
+<div class="search-section">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <a href="flowerly.html" style="text-decoration:none; color:inherit;">
+                🌸 Flowerly
+            </a>
+        </div>
+
+        <div class="flex-grow-1 px-4">
+            <input class="form-control" placeholder="Marka, ürün veya kategori ara">
+        </div>
+
+        <div class="d-flex align-items-center gap-4" id="navMenu">
+            <a href="urunler.html" style="text-decoration:none; color:inherit;">Ürünler</a>
+            
+            <label id="uyelikLabel" for="modalAc" style="cursor:pointer;">
+                <strong style="color:inherit;">👤 Üyelik</strong>
+            </label>
+
+            <div class="menu-item">
+                Kategoriler ▾
+                <div class="dropdown-menu-custom">
+                    <a href="cok-satanlar.html">Çok Satanlar</a>
+                    <a href="iyi-ki-dogdun.html">İyi ki Doğdun</a>
+                    <a href="yeni-bebek.html">Yeni Bebek</a>
+                </div>
+            </div>
+
+            <a href="sepetim.html" style="text-decoration:none; color:inherit; font-weight:600; position:relative;">
+                🛒 Sepetim
+                <span id="sepetBadge" class="sepet-badge">0</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="container mt-5">
+        <h3>❤️ Favorilerim</h3>
+        <div class="row g-4" id="favList"></div>
+        <p id="emptyMsg" class="text-center mt-4" style="display:none;">Henüz favoriniz yok.</p>
+    </div>
+
+    <!-- Aynı footer -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+// Sayfa yüklendiğinde çalışması için (Slayt 22 ve 27 mantığı)
+window.onload = function() {
+$(document).ready(function() {
+   var girisYapildi = false; 
+
+    // Slayt 4 & 5: Navigasyon alanını seçme
+    var navAlani = document.getElementById("navMenu");
+
+    // Slayt 12: innerHTML ile linkleri ekliyoruz (ID vererek kontrol edeceğiz)
+    if (navAlani) {
+        navAlani.innerHTML += '<a href="#" id="favLink" style="text-decoration:none; color:inherit;">❤️ Favoriler</a>';
+        navAlani.innerHTML += '<a href="#" id="sipLink" style="text-decoration:none; color:inherit;">📦 Siparişlerim</a>';
+    }
+     // --- FAVORİLER TIKLAMA KONTROLÜ ---
+    // Slayt 27: Olay dinleyicisi ekleme
+    document.getElementById("favLink").addEventListener("click", function() {
+        // Slayt 31: If Kontrolü
+        if (girisYapildi == false) {
+            // Slayt 39: Alert Box
+            alert("Uyarı: Favorilerinizi görmek için lütfen önce giriş yapın!");
+        } else {
+            // Giriş yapılmışsa sayfaya yönlendir
+            window.location.href = "favoriler.html";
+        }
+    });
+
+    // --- SİPARİŞLERİM TIKLAMA KONTROLÜ ---
+    document.getElementById("sipLink").addEventListener("click", function() {
+        if (girisYapildi == false) {
+            alert("Uyarı: Siparişlerinizi görmek için lütfen önce giriş yapın!");
+        } else {
+            window.location.href = "siparisler.html";
+        }
+    });
+
+    // 1. Sepete Ekle Butonları İçin İşlem
+    // Slayt 6: Belirtilen class (buy-btn) ile tüm elementleri seçer
+    var sepetButonlari = document.getElementsByClassName("buy-btn");
+
+    // Slayt 34: For döngüsü ile her butona tek tek olay ekliyoruz
+    for (var i = 0; i < sepetButonlari.length; i++) {
+        // Slayt 27: addEventListener ile "click" olayı ekleme
+        sepetButonlari[i].addEventListener("click", function() {
+            // Slayt 39: Alert Box
+            alert("Ürün başarıyla sepete eklendi!");
+        });
+      }
+    });
+};
+</script>
+    <script>
+
+        $(document).ready(function() {
+            const favs = JSON.parse(localStorage.getItem('favorites') || '[]');
+            if (favs.length === 0) {
+                $('#emptyMsg').show();
+                return;
+            }
+            favs.forEach(urun => {
+                $('#favList').append(`
+                    <div class="col-md-4 col-sm-6">
+                        <div class="product-card">
+                            <img src="${urun.img}" alt="${urun.ad}">
+                            <h6 class="mt-3 fw-bold">${urun.ad}</h6>
+                            <p class="price">${urun.fiyat} TL</p>
+                            <button class="buy-btn" data-ad="${urun.ad}" data-fiyat="${urun.fiyat}" data-img="${urun.img}">Sepete Ekle</button>
+                        </div>
+                    </div>
+                `);
+            });
+        });
+    </script>
+</body>
+</html>
