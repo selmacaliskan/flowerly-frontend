@@ -1,0 +1,275 @@
+/* =============================================
+   assets/css/siparislerim.css
+   ============================================= */
+
+/* ---------- Stat Kartları ---------- */
+.sp-stat-card {
+    border-radius: 14px !important;
+    transition: transform 0.15s ease;
+}
+.sp-stat-card:hover { transform: translateY(-3px); }
+
+.sp-stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+.sp-stat-num {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #3B6D11;
+    line-height: 1.2;
+}
+.sp-stat-lbl {
+    font-size: 0.72rem;
+    color: #999;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ---------- Filtre Butonları ---------- */
+.sp-filtre-btn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+.sp-filtre-btn:hover { border-color: #3B6D11; color: #3B6D11; }
+.sp-filtre-btn.active {
+    background: #3B6D11;
+    border-color: #3B6D11;
+    color: #fff;
+}
+
+/* ---------- Sipariş Kartı ---------- */
+.sp-siparis-kart {
+    border-radius: 16px !important;
+    transition: box-shadow 0.2s ease;
+}
+.sp-siparis-kart:hover {
+    box-shadow: 0 6px 24px rgba(59, 109, 17, 0.1) !important;
+}
+
+.sp-siparis-no {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #3B6D11;
+    letter-spacing: 0.02em;
+}
+.sp-tarih {
+    font-size: 0.78rem;
+    color: #bbb;
+}
+.sp-fiyat {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #222;
+}
+
+/* ---------- Durum Badges ---------- */
+.sp-durum-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.durum-teslim        { background: #e8f5e9; color: #2e7d32; }
+.durum-hazirlaniyor  { background: #fff8e1; color: #e65100; }
+.durum-kargoda       { background: #e3f2fd; color: #01579b; }
+.durum-iptal         { background: #fdecea; color: #c62828; }
+.durum-bekliyor      { background: #f1f3f4; color: #555; }
+
+/* ---------- Ürün Listesi ---------- */
+.sp-urun-listesi {
+    background: #f9f9f7;
+    border-radius: 10px;
+    padding: 8px 14px;
+}
+.sp-urun-satir {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 0.83rem;
+    border-bottom: 1px solid #eee;
+}
+.sp-urun-satir:last-child { border-bottom: none; }
+.sp-urun-ikon  { font-size: 0.95rem; flex-shrink: 0; }
+.sp-urun-ad    { flex: 1; color: #333; }
+.sp-urun-adet  { color: #aaa; font-size: 0.78rem; }
+.sp-urun-fiyat { font-weight: 600; color: #3B6D11; white-space: nowrap; }
+.sp-urun-daha  { font-size: 0.72rem; color: #bbb; padding-top: 5px; }
+
+/* ---------- Takip Çubuğu ---------- */
+.sp-takip {
+    display: flex;
+    align-items: center;
+    padding: 14px 0 4px;
+}
+.sp-takip-adim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+.sp-takip-nokta {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    transition: all 0.2s;
+}
+.sp-takip-adim.aktif .sp-takip-nokta {
+    background: #3B6D11;
+    border-color: #3B6D11;
+    box-shadow: 0 0 0 4px rgba(59,109,17,0.15);
+    color: #fff;
+}
+.sp-takip-adim.bitti .sp-takip-nokta {
+    background: #97C459;
+    border-color: #97C459;
+    color: #fff;
+}
+.sp-takip-etiket {
+    font-size: 0.64rem;
+    color: #bbb;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+.sp-takip-adim.aktif .sp-takip-etiket { color: #3B6D11; font-weight: 700; }
+.sp-takip-adim.bitti .sp-takip-etiket { color: #639922; }
+
+.sp-takip-cizgi {
+    flex: 1;
+    height: 2px;
+    background: #e0e0e0;
+    margin-bottom: 18px;
+    transition: background 0.2s;
+    min-width: 16px;
+}
+.sp-takip-cizgi.bitti { background: #97C459; }
+
+/* ---------- Aksiyon Butonları ---------- */
+.sp-btn-primary {
+    background: #3B6D11;
+    color: #EAF3DE !important;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.15s;
+    cursor: pointer;
+}
+.sp-btn-primary:hover { background: #2d540d; }
+.sp-btn-primary.sp-btn-sm { padding: 6px 14px; font-size: 0.78rem; }
+
+.sp-btn-outline {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #555 !important;
+    font-size: 0.78rem;
+    background: transparent;
+    text-decoration: none;
+    padding: 6px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+.sp-btn-outline:hover { border-color: #3B6D11; color: #3B6D11 !important; }
+
+.sp-btn-iptal {
+    border: 1px solid #f5c6c6;
+    border-radius: 8px;
+    color: #c62828 !important;
+    font-size: 0.78rem;
+    background: #fdecea;
+    text-decoration: none;
+    padding: 6px 14px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+.sp-btn-iptal:hover { background: #f5c6c6; }
+
+/* ---------- Boş Durum ---------- */
+.sp-empty {
+    border-radius: 16px !important;
+}
+.sp-empty-icon { font-size: 3rem; }
+
+/* =============================================
+   Sipariş Detay Tablosu  (siparis-detay.php)
+   ============================================= */
+
+.sp-detay-tablo {
+    border: 0.5px solid var(--bs-border-color, #e5e5e5);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: .85rem;
+}
+
+.sp-detay-baslik,
+.sp-detay-satir {
+    display: grid;
+    grid-template-columns: 1fr 60px 110px 110px;
+    gap: 0;
+    padding: 10px 16px;
+    align-items: center;
+}
+
+.sp-detay-baslik {
+    background: #f6f6f4;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #999;
+}
+
+.sp-detay-satir {
+    border-top: 0.5px solid #eee;
+    color: #333;
+}
+
+.sp-detay-satir:hover { background: #fafaf8; }
+
+.sp-col-urun   { display: flex; align-items: center; gap: 10px; } 
+.sp-col-adet   { text-align: center; color: #888; }
+.sp-col-fiyat  { text-align: right; color: #555; }
+.sp-col-toplam { text-align: right; font-weight: 600; color: #3B6D11; }
+
+.sp-detay-genel-toplam {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-top: 1.5px solid #eee;
+    font-weight: 700;
+    font-size: .95rem;
+    background: #f6f6f4;
+}
+.sp-detay-genel-toplam span:last-child { color: #3B6D11; font-size: 1.05rem; }

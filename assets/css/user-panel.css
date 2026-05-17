@@ -1,0 +1,157 @@
+/* Modern Renk Paleti */
+:root {
+    --f-rose: #e91e63;
+    --f-dark: #1e1e2d;
+    --f-soft-bg: #f8f9fa;
+    --f-white: #ffffff;
+}
+
+body { background-color: var(--f-soft-bg); }
+
+/* Bento Sidebar */
+.bento-sidebar {
+    background: var(--f-white);
+    border-radius: 24px;
+    padding: 10px;
+}
+
+.sidebar-header {
+    padding: 30px 20px;
+    text-align: center;
+    background: #fffafa;
+    border-radius: 20px;
+}
+
+.user-avatar {
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 15px;
+}
+
+.premium-badge {
+    background: #fff;
+    color: var(--f-rose);
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 8px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.bento-sidebar .list-group-item {
+    border: none;
+    border-radius: 15px !important;
+    margin: 4px 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    transition: 0.3s;
+}
+
+.bento-sidebar .list-group-item.active {
+    background: var(--f-rose) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 15px rgba(233, 30, 99, 0.2);
+}
+
+/* Bento Cards */
+.bento-card {
+    background: var(--f-white);
+    border-radius: 24px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+
+.welcome-text {
+    font-family: 'Playfair Display', serif; /* Eğer serif font varsa şık durur */
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* Hızlı İşlem Butonları */
+.quick-action-btn {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--f-dark);
+    display: block;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    text-align: center;
+}
+
+.quick-action-btn:hover {
+    background: var(--f-rose);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Sipariş / Durum Kartı (Gradient) */
+.status-card {
+    background: linear-gradient(135deg, var(--f-rose) 0%, #c2185b 100%);
+    color: #fff;
+}
+
+.btn-white-pill {
+    background: #fff;
+    color: var(--f-rose);
+    border-radius: 50px;
+    font-weight: 700;
+    padding: 10px 25px;
+    border: none;
+    transition: 0.3s;
+}
+
+/* Progress & Badges */
+.progress { background: #f0f0f0; border-radius: 50px; }
+.progress-bar { background: var(--f-rose); border-radius: 50px; }
+.stats-badge { background: #fff5f8; color: var(--f-rose); font-weight: 800; padding: 4px 12px; border-radius: 50px; font-size: 12px; }
+
+/* Tavsiye Kartı */
+.info-card {
+    background: #fdfefe;
+    border: 1px solid #f0f0f0 !important;
+}
+.info-icon { font-size: 3rem; opacity: 0.8; }
+
+.btn-add-reminder {
+    background: #f8f9fa;
+    border: 2px dashed #eee;
+    color: #999;
+    border-radius: 15px;
+    padding: 10px;
+    transition: 0.3s;
+}
+.btn-add-reminder:hover { border-color: var(--f-rose); color: var(--f-rose); background: #fffafa; }
+:root { --f-rose: #e91e63; --f-rose-light: #fff0f5; }
+
+/* Sidebar Tasarımı */
+.bento-sidebar { border-radius: 25px; overflow: hidden; background: #fff; }
+.sidebar-header { background: linear-gradient(135deg, #fffafa 0%, #fff0f5 100%); }
+.user-avatar-circle { 
+    width: 80px; height: 80px; background: #fff; border-radius: 30px; 
+    margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;
+}
+.bg-rose-light { background-color: var(--f-rose-light); }
+.text-rose { color: var(--f-rose); }
+
+/* Hızlı Aksiyon Butonları */
+.quick-action-btn { 
+    background: #fff; padding: 20px; border-radius: 20px; text-decoration: none; 
+    color: #333; display: block; transition: 0.3s; text-align: center; border: 1px solid #f1f1f1;
+}
+.quick-action-btn:hover { background: var(--f-rose); color: #fff; transform: translateY(-5px); }
+
+.siparis-yazi { 
+    font-family: 'Playfair Display', 
+    serif; font-weight: 800; 
+    font-style: italic;
+    color:#eee; 
+}

@@ -1,0 +1,50 @@
+body { background: #f0f2f5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* Sidebar Tasarımı */
+.admin-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: #1e1e2d;
+    min-height: 100vh;
+    color: white;
+}
+.menu-section label {
+    font-size: 11px;
+    padding: 10px 25px;
+    color: #49495c;
+    font-weight: bold;
+    display: block;
+}
+.nav-link {
+    color: #a2a3b7;
+    padding: 12px 25px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+.nav-link:hover { background: rgba(255,255,255,0.05); color: #fff; }
+.nav-link.active {
+    background: #f1416c; /* Görseldeki o pembe-kırmızı ton */
+    color: white;
+    border-radius: 10px;
+    margin: 5px 15px;
+}
+
+/* Kart Tasarımları */
+.stat-card {
+    background: white;
+    transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); }
+
+.bg-primary-light { background: #e1f0ff; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+.bg-info-light { background: #e1fff0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+.bg-warning-light { background: #fff8e1; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+.bg-success-light { background: #e8fff3; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+
+.main-content { background: #f9f9f9; }
+
+.bg-success-light { background: #e8fff3; }
+.bg-warning-light { background: #fff8e1; }
+.bg-info-light { background: #e1fff0; }
+.bg-danger-light { background: #fff5f8; }
+.bg-secondary-light { background: #f5f8fa; }
